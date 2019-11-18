@@ -31,3 +31,30 @@ Nowadays, there exists a myriad of products, examples of an ever-growing consump
 # Questions for TAa
 -Do you have any recommendations on how to link the two datasets ?
 -What are the possible biases in our methodology ?
+
+
+
+# Milestone 2
+
+Enlver les rows qui ont plus de la moitié des infos manquantes dans openfoodfacts
+
+Se concentrer sur le nutirotional grade E
+Faire analyse du sucre machin sur openfoodfacts
+
+
+
+## ce qu'on a changé yo
+
+- Show that we can handle the data in its size ?
+- Expliquer un peu plus la data
+- ways to enrich, filter, transform the data according to your needs ?
+- That you have updated your plan in a reasonable way, reflecting your improved knowledge after data acquaintance. In particular, discuss how your data suits your project needs and discuss the methods you’re going to use, giving their essential mathematical details in the notebook.
+abandonné le carbon footprint car suelement 1000 rows avaient cette données sur 1000000000000000
+    Grâce aux conseils du maginfique TA aussi 
+
+## NEW PIPELINE
+trier selon nutriitional score 
+    voir les différences entre les diffrents grades
+    d'abord se concenter sur les alimetns avec grade E 
+    lier la shit à l'instacart (commandes avec grade plutôt haut ou plutôt bas, erst-ce qu'on arrive à dégager des profils types d'acheteurs)
+    faire un ranking
