@@ -13,7 +13,9 @@ Nowadays, there exists a myriad of products, examples of an ever-growing consump
 - How do these rankings compare to the products the users buy ?
 - Can we create recommendations for users based on that data ?
 
-# Milestone 2 feedback + auto-critic
+# Milestone 2 feedback + auto-critic 
+
+Notebook : project_notebook.ipynb
 
 Following additionnal analysis of the data we have, we decided on dropping the Carbon Footprint aspect of the project. Very few items actually have that information, and our analysis would have been impossible to realise. Our aspect of "Data for good" will therefore be switched from: "suggest food items to reduce that carbon footprint" to: "suggest food items that are better for your health". We will do so be focusing on the nutritional grade of the food. Once we have extracted that information, we can also try to see if it is correlated to suger levels in the food, or other meaningful correlations. 
 
