@@ -8,53 +8,59 @@ Nowadays, there exists a myriad of products, examples of an ever-growing consump
 
 # Research questions
 
-- What are the worst/best ranking products according to carbon footprint ? 
 - What are the worst/best ranking products according to nutritional index ?
-- Combination of these criteria, correlation between them ?
 - Possible to identify specific diets ?
 - How do these rankings compare to the products the users buy ?
 - Can we create recommendations for users based on that data ?
-- New carbon footprint index based on how popular the product is
 
-# Dataset
+# Milestone 2 feedback + auto-critic
 
-- Open food facts database : We will use it to make statistics on different informations given about the food products (amongst others the nutritional index and the carbon footprint). Afterwards, we will combine different criteria in order to come up with food rankings giving for example the healthiest food for selected diets or ecological values. 
-- Instacart : In a second time, we will use the instacart database to find out which types of food are bought the most by the customers. We will then use this information to find out how well the most sought after products do in the rankings we established before. 
+Following additionnal analysis of the data we have, we decided on dropping the Carbon Footprint aspect of the project. Very few items actually have that information, and our analysis would have been impossible to realise. Our aspect of "Data for good" will therefore be switched from: "suggest food items to reduce that carbon footprint" to: "suggest food items that are better for your health". We will do so be focusing on the nutritional grade of the food. Once we have extracted that information, we can also try to see if it is correlated to suger levels in the food, or other meaningful correlations. 
 
-# A list of internal milestones up until project milestone 2
+# Datasets
 
-- Import and clean the data
-- Sort the data and extract the products we will work with
-- Do aggregation and statistics 
-- Explain our reasoning, comment and write the notebook
+- Open food facts database : We will use it to make statistics on different informations given about the food products (amongst others the nutritional index. Afterwards, we will combine different criteria in order to come up with food rankings giving for example the healthiest food for selected diets. 
+- Instacart : In a second time, we will use the instacart database to find out which types of food are bought the most by the customers. We will then use this information to find out how well the most sought after products do in the rankings we established before. Also, if we find food that is similar to the ones users bought, but higher up in our rankings, we will be recommending that new food item to new. 
 
-# Questions for TAa
--Do you have any recommendations on how to link the two datasets ?
--What are the possible biases in our methodology ?
+## Data cleaning
 
+We started with the Open food facts database , where we removed the rows that have more than half of the data missing. These will introduce more problems than what they can actually contribute. 
+Standard outliers and NaN removal has also been applied. 
+We also remove columns that are mostly empty (  >850k rows have the corresponding value missing). We now have a size-reduced dataset, but the quantity of information itself did not get reduced very much. 
 
+Concerning the instacart dataset, we created a product-centric dataframe, where each product is represented by a row. This view serves us much better than the previous one. We then only consider the 5% most popular products, to be able to reduce the size of the dataset. 
 
-# Milestone 2
+## Data augmentation
 
-Enlver les rows qui ont plus de la moitié des infos manquantes dans openfoodfacts
-
-Se concentrer sur le nutirotional grade E
-Faire analyse du sucre machin sur openfoodfacts
-
-
-
-## ce qu'on a changé yo
-
-- Show that we can handle the data in its size ?
-- Expliquer un peu plus la data
 - ways to enrich, filter, transform the data according to your needs ?
-- That you have updated your plan in a reasonable way, reflecting your improved knowledge after data acquaintance. In particular, discuss how your data suits your project needs and discuss the methods you’re going to use, giving their essential mathematical details in the notebook.
-abandonné le carbon footprint car suelement 1000 rows avaient cette données sur 1000000000000000
-    Grâce aux conseils du maginfique TA aussi 
 
-## NEW PIPELINE
-trier selon nutriitional score 
-    voir les différences entre les diffrents grades
-    d'abord se concenter sur les alimetns avec grade E 
-    lier la shit à l'instacart (commandes avec grade plutôt haut ou plutôt bas, erst-ce qu'on arrive à dégager des profils types d'acheteurs)
-    faire un ranking
+Nutritionnal score and grade convey the same information, and the score offers more data and nuances. 
+
+For relations and analysis between nutritionnal grade and differents food facts, please open the Notebook. 
+
+### Double dataset linking
+
+We created a dictionnary of the most frequent words in each nutritionnal grade category (after some translation, to be able to use products regardless of origin/language). Some results are easily predictable, like "bio" being the most used word in grade A, and "chocolate" being its counterpart in grade E. Again, more info in the notebook. 
+We then compute a similiraty score for each product, based on word occurences. This allows us to assign a grade to instacart items. 
+
+## Data analysis
+
+We started by looking at the relation between the grade we assigned to instacart products and the department of said product (examples are 'frozen', 'bakery', 'canned foods', amongst others). 
+The results seem to match with common sense, such as alcohol being bad for the consumer's health. Our link between the two datasets seems to work. 
+We will add other statistics to our analysis in the Milestone 3. 
+
+# Data pipeline
+
+- Sort data into different nutritionnal score
+- Notice significant differences between different nutritionnal grades
+- Focus on food with grade E (the worst)
+    - Are the sugar levels related to the grade attribution ?
+    - Is there a way to avoid foods that are in this category ? 
+    
+- Link the two databases together
+    - Is there a general tendency discernable amongst orders ? Is it possible to extract buyer's profiles to be able to see if they hover aroung grade A good or are biaised towards grade E food ? 
+    - Pinpoint specific diets
+    - Recommendation system, where similar foods are bagged together, and the best nutritionnal score amongst them is then recommended to the user. 
+- Establish food ranking, base on nutritionnal score, and other additionnal criteria if needed
+
+# Questions for TAs
