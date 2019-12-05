@@ -2,13 +2,13 @@
 layout: default
 ---
 
-## A Jekyll template for publishing single-page websites and articles that are incredibly readable and fully responsive
+## Research questions
 
-### Nice, clean, reading!
+- What are the worst/best ranking products according to nutritional index ?
+- Possible to identify specific diets ?
+- How do these rankings compare to the products the users buy ?
+- Can we create recommendations for users based on that data ?
 
-Good clean read is set up with readability first in mind. Whatever you want to communicate here can be read easily, and without distraction. Of course, it's fully responsive, which means people can read it naturally on any phone, or tablet. Write it in markdown in <code>index.md</code> and get a beautifully published piece.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 > "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
@@ -16,48 +16,64 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Back up your stuff with solid, clean citations. Footnotes can be written in markdown and appear like this.[^1] Use as many as you like.[^2]
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+# Milestone 2 feedback + auto-critic 
 
-### Add social sharing buttons
+Notebook : project_notebook.ipynb
 
-Simply add the following line anywhere in your markdown:
+Following additionnal analysis of the data we have, we decided on dropping the Carbon Footprint aspect of the project. Very few items actually have that information, and our analysis would have been impossible to realise. Our aspect of "Data for good" will therefore be switched from: "suggest food items to reduce that carbon footprint" to: "suggest food items that are better for your health". We will do so be focusing on the nutritional grade of the food. Once we have extracted that information, we can also try to see if it is correlated to suger levels in the food, or other meaningful correlations.
 
-<pre><code>{% raw  %}
-{% include sharing.html %}
-{% endraw %}
-</code></pre>
+# Datasets
 
-and get a nice responsive sharing ribbon.
+- Open food facts database : We will use it to make statistics on different informations given about the food products (amongst others the nutritional index. Afterwards, we will combine different criteria in order to come up with food rankings giving for example the healthiest food for selected diets. 
+- Instacart : In a second time, we will use the instacart database to find out which types of food are bought the most by the customers. We will then use this information to find out how well the most sought after products do in the rankings we established before. Also, if we find food that is similar to the ones users bought, but higher up in our rankings, we will be recommending that new food item to new. 
 
-{% include sharing.html %}
+## Data cleaning
 
-Add this at the bottom, or the top, or between every other paragraph if you're desprate for social validation.
+We started with the Open food facts database , where we removed the rows that have more than half of the data missing. These will introduce more problems than what they can actually contribute. 
+Standard outliers and NaN removal has also been applied. 
+We also remove columns that are mostly empty (  >850k rows have the corresponding value missing). We now have a size-reduced dataset, but the quantity of information itself did not get reduced very much. 
 
-Just remember to customize the buttons to fit your url in the `_includes/sharing.html` file. These buttons are made available and customizable by the good folks at kni-labs. See the documentation at [https://github.com/kni-labs/rrssb](https://github.com/kni-labs/rrssb) for more information.
+Concerning the instacart dataset, we created a product-centric dataframe, where each product is represented by a row. This view serves us much better than the previous one. We then only consider the 5% most popular products, to be able to reduce the size of the dataset. 
 
-### Font awesome is also included
+## Data augmentation
 
-<i class="fa fa-quote-left fa-3x fa-pull-left fa-border"></i> Now you can use all the cool icons you want! [Font Awesome](http://fontawesome.io) is indeed awesome. But wait, you don't need this sweetness and you don't want that little bit of load time from the font awesome css? No problem, just disable it in the `config.yml` file, and it won't be loaded.
+- ways to enrich, filter, transform the data according to your needs ?
 
-<ul class="fa-ul">
-  <li><i class="fa-li fa fa-check-square"></i>you can make lists...</li>
-  <li><i class="fa-li fa fa-check-square-o"></i>with cool icons like this,</li>
-  <li><i class="fa-li fa fa-spinner fa-spin"></i>even ones that move!</li>
-</ul>
+Nutritionnal score and grade convey the same information, and the score offers more data and nuances. 
 
-If you need them, you can stick any of the [605 icons](http://fontawesome.io/icons/) anywhere, with any size you like. ([See documentation](http://fontawesome.io/examples/))
+For relations and analysis between nutritionnal grade and differents food facts, please open the Notebook. 
 
-<i class="fa fa-building"></i>&nbsp;&nbsp;<i class="fa fa-bus fa-lg"></i>&nbsp;&nbsp;<i class="fa fa-cube fa-2x"></i>&nbsp;&nbsp;<i class="fa fa-paper-plane fa-3x"></i>&nbsp;&nbsp;<i class="fa fa-camera-retro fa-4x">
+### Double dataset linking
 
-### Add images to make your point
+We created a dictionnary of the most frequent words in each nutritionnal grade category (after some translation, to be able to use products regardless of origin/language). Some results are easily predictable, like "bio" being the most used word in grade A, and "chocolate" being its counterpart in grade E. Again, more info in the notebook. 
+We then compute a similiraty score for each product, based on word occurences. This allows us to assign a grade to instacart items. 
 
-Images play nicely with this template as well. Add diagrams or charts to make your point, and the template will fit them in appropriately.
+## Data analysis
+
+We started by looking at the relation between the grade we assigned to instacart products and the department of said product (examples are 'frozen', 'bakery', 'canned foods', amongst others). 
+The results seem to match with common sense, such as alcohol being bad for the consumer's health. Our link between the two datasets seems to work. 
+We will add other statistics to our analysis in the Milestone 3. 
+
+# Data pipeline
+
+- Sort data into different nutritionnal score
+- Notice significant differences between different nutritionnal grades
+- Focus on food with grade E (the worst)
+    - Are the sugar levels related to the grade attribution ?
+    - Is there a way to avoid foods that are in this category ? 
+    
+- Link the two databases together
+    - Is there a general tendency discernable amongst orders ? Is it possible to extract buyer's profiles to be able to see if they hover aroung grade A good or are biaised towards grade E food ? 
+    - Pinpoint specific diets
+    - Recommendation system, where similar foods are bagged together, and the best nutritionnal score amongst them is then recommended to the user. 
+- Establish food ranking, base on nutritionnal score, and other additionnal criteria if needed
+
+# Questions for TAs
+
 
 <img src="images/hello.svg" alt="sample image">
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-Thanks to [Shu Uesengi](https://github.com/chibicode) for inspiring and providing the base for this template with his excellent work, [solo](https://github.com/chibicode).
 
 <hr>
 
