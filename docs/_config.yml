@@ -1,13 +1,116 @@
-# Site settings
+# --- General options --- #
 
-title: "ADA class 2019 : Where do your purchases rank in our analysis ?"
-tag_text: Purchases ranking
-description: ADA project of team gobigorgohome
-url: "127.0.0.1:4000"
-baseurl: "https://marcbickel.github.io/project_gobigorgohome"
-font-awesome-include: true # make this false if you don't need font-awesome
+# url is the full website URL
+# baseurl is the website's URL without the hostname
 
-# Build settings
+# If you are building a simple GitHub user page (https://username.github.io) then use these settings:
+url: "https://marcbickel.github.io/project_gobigorgohome"
+baseurl: "/project_gobigorgohome"
+
+# If you are building a GitHub project page then use these settings:
+#url: "http://username.github.io/projectname"
+#baseurl: "/projectname"
+
+# Of course don't forget to change the username and projectname to YOUR username and project
+
+# Name of website
+title: Applied Data Analysis Class Project
+
+# Short description of your site
+description: "Where do your purchases rank in our analysis ?"
+
+# --- Navigation bar options --- #
+
+# List of links in the navigation bar
+navbar-links:
+  #Nutri-Score: "nutri_score"
+  Resources:
+    - Open Food Facts: "https://world.openfoodfacts.org/"
+    - InstaCart: "https://www.instacart.com/datasets/grocery-shopping-2017"
+    - GitHub: "https://github.com/MarcBickel/project_gobigorgohome"
+
+# Image to show in the navigation bar - image must be a square (width = height)
+# Remove this parameter if you don't want an image in the navbar
+avatar: "/img/avatar.jpg"
+
+# If you want to have an image logo in the top-left corner instead of the title text,
+# then specify the following parameter
+#title-img: "/img/off.png"
+
+# --- Background colour/image options --- #
+
+# Personalize the colors in your website. Colour values can be any valid CSS colour
+
+navbar-col: "#F5F5F5"
+navbar-text-col: "#404040"
+navbar-children-col: "#F5F5F5"
+page-col: "#FFFFFF"
+link-col: "#008AFF"
+hover-col: "#0085A1"
+footer-col: "#F5F5F5"
+footer-text-col: "#777777"
+footer-link-col: "#404040"
+
+# Alternatively, the navbar, footer, and page background can be set to use background images
+# instead of colour
+
+# navbar-img: "/img/bgimage.png"
+# footer-img: "/img/bgimage.png"
+# page-img: "/img/bgimage.png"
+
+# --- Footer options --- #
+
+# Change all these values or delete the ones you don't want.
+# Important: you must keep the "name" parameter, everything else you can remove
+author:
+  name: Marc Bickel, Lorenzo Donadio, Samuel Dubuis, Cécile Trottet
+
+# Truncates the excerpt to the specified number of words on the index page
+excerpt_length: 50
+
+# Character used to separate site title and description in HTML document title
+# and RSS feed title
+title-separator: "-"
+
+# --- Don't need to touch anything below here (but you can if you want) --- #
+
+# Output options (more information on Jekyll's site)
+timezone: "America/Vancouver"
 markdown: kramdown
+highlighter: rouge
+permalink: /:year-:month-:day-:title/
+paginate: 5
 
-exclude: ["README.md"]
+kramdown:
+  input: GFM
+
+# Default YAML values (more information on Jekyll's site)
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true  # add comments to all blog posts
+      social-share: true # add social media sharing buttons to all blog posts
+  -
+    scope:
+      path: "" # all files
+    values:
+      layout: "page"
+      show-avatar: true
+
+# Use tags index page and make tags on each post clickable
+link-tags: true
+
+# Exclude these files from production site
+exclude:
+  - CHANGELOG.md
+  - CNAME
+  - Dockerfile
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - Vagrantfile
