@@ -27,14 +27,14 @@ explain which datasets were used, where found, and what they gave us, plus de li
 ## Story and answering the questions
 
 ### boxplots
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/boxplot_nutrition_grade.html" height="100%" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/boxplot_nutrition_grade.html" height="2500px" width="100%"></iframe>
 
 ### most found words for each grade
-<img src="../img/wordcloud_a.png">
-<img src="../img/wordcloud_b.png">
-<img src="../img/wordcloud_c.png">
-<img src="../img/wordcloud_d.png">
-<img src="../img/wordcloud_e.png">
+<img src="img/wordcloud_a.png">
+<img src="img/wordcloud_b.png">
+<img src="img/wordcloud_c.png">
+<img src="img/wordcloud_d.png">
+<img src="img/wordcloud_e.png">
 
 ### With footnotes too!
 
