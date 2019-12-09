@@ -27,7 +27,16 @@ explain which datasets were used, where found, and what they gave us, plus de li
 ## Story and answering the questions
 
 ### boxplots
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/boxplot_nutrition_grade.html" height="2500px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/html_boxplot_carbohydrates_100g.html" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/html_boxplot_energy_100g.html" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/html_boxplot_fat_100g.html" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/html_boxplot_fiber_100g.html" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/html_boxplot_proteins_100g.html" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/html_boxplot_salt_100g.html" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/html_boxplot_saturated-fat_100g.html" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/html_boxplot_sodium_100g.html" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/html_boxplot_sugars_100g.html" height="525px" width="100%"></iframe>
+
 
 ### most found words for each grade
 <img src="img/wordcloud_a.png">
@@ -39,10 +48,6 @@ explain which datasets were used, where found, and what they gave us, plus de li
 ### With footnotes too!
 
 Back up your stuff with solid, clean citations. Footnotes can be written in markdown and appear like this.[^1] Use as many as you like.[^2]
-
-
-<img src="images/hello.svg" alt="sample image">
-
 
 
 <hr>
