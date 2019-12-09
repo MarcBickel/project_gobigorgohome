@@ -39,12 +39,7 @@ explain which datasets were used, where found, and what they gave us, plus de li
 
 
 ### most found words for each grade
-<img src="img/wordcloud_a.png">
-<img src="img/wordcloud_b.png">
-<img src="img/wordcloud_c.png">
-<img src="img/wordcloud_d.png">
-<img src="img/wordcloud_e.png">
-
+<img src="img/wordcloud.png">
 ### With footnotes too!
 
 Back up your stuff with solid, clean citations. Footnotes can be written in markdown and appear like this.[^1] Use as many as you like.[^2]
