@@ -63,6 +63,16 @@ We will add other statistics to our analysis in the Milestone 3.
     - Is there a general tendency discernable amongst orders ? Is it possible to extract buyer's profiles to be able to see if they hover aroung grade A good or are biaised towards grade E food ? 
     - Pinpoint specific diets
     - Recommendation system, where similar foods are bagged together, and the best nutritionnal score amongst them is then recommended to the user. 
+- Establish food ranking, base on nutritionnal score, and other additionnal criteria if needed- Sort data into different nutritionnal score
+- Notice significant differences between different nutritionnal grades
+- Focus on food with grade E (the worst)
+    - Are the sugar levels related to the grade attribution ?
+    - Is there a way to avoid foods that are in this category ? 
+    
+- Link the two databases together
+    - Is there a general tendency discernable amongst orders ? Is it possible to extract buyer's profiles to be able to see if they hover aroung grade A good or are biaised towards grade E food ? 
+    - Pinpoint specific diets
+    - Recommendation system, where similar foods are bagged together, and the best nutritionnal score amongst them is then recommended to the user. 
 - Establish food ranking, base on nutritionnal score, and other additionnal criteria if needed
 
 # Questions for TAs
