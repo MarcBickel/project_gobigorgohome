@@ -25,12 +25,13 @@ Standard outliers and NaN removal has also been applied.
 We also remove columns that are mostly empty (  >850k rows have the corresponding value missing). We now have a size-reduced dataset, but the quantity of information itself did not get reduced very much. 
 
 Concerning the instacart dataset, we created a product-centric dataframe, where each product is represented by a row. This view serves us much better than the previous one. We then only consider the 5% most popular products, to be able to reduce the size of the dataset. 
+On se concentre sur les produits qui forment 95% des commandes, en tout environ 3000 produits. 
 
 ## différents food grades
 avec différences entre les food grades
 word clouds
-## Données sur instacart
-tendances dans les commandes des gens ?
+
+
 ## Linker les deux datasets
 
 We created a dictionnary of the most frequent words in each nutritionnal grade category (after some translation, to be able to use products regardless of origin/language). Some results are easily predictable, like "bio" being the most used word in grade A, and "chocolate" being its counterpart in grade E. Again, more info in the notebook. 
@@ -38,14 +39,19 @@ We then compute a similiraty score for each product, based on word occurences. T
 
 graphiquement représenter des dictionnaires ?
 Is there a general tendency discernable amongst orders ? Is it possible to extract buyer's profiles to be able to see if they hover aroung grade A good or are biaised towards grade E food ? 
-### Focus sur grade E ?
-- Are the sugar levels related to the grade attribution ?
-- Is there a way to avoid foods that are in this category ? 
+
+formule mathématique pour lier les deux datasets et faire notre ranking
+
+bubble plot pour nombre de mots par langue
 
 ## food rankings ? 
 like the best food, based on nutritionnal score, and other additionnal criteria if needed
 examples de food qu'il est possible de remplacer par d'autres foods et monter en grade avec ce remplacement
+top 5 dans cahque catégorie nutritionnelle avec nombres d'achats pour pouvoir répondre à la question Do you buy healthy
 ## FIndings
 est-ce qu'on a genre des facts/résultats à montrer à la fin ?
 Des fun facts ?
 
+## To go further
+Instacart ça a quelle base d'utilisateurs ?
+Ceux qui commandent la bouffe pour qu'elle soit livrée, ils ont assez de tune pour faire gaffe à manger sain ?
