@@ -31,6 +31,8 @@ We started with the Open food facts database , where we removed the rows that ha
 Standard outliers and NaN removal has also been applied. 
 We also remove columns that are mostly empty (  >850k rows have the corresponding value missing). We now have a size-reduced dataset, but the quantity of information itself did not get reduced very much. 
 
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/850k-filter.html" height="525px" width="100%"></iframe>
+
 Concerning the instacart dataset, we created a product-centric dataframe, where each product is represented by a row. This view serves us much better than the previous one. We then only consider the 5% most popular products, to be able to reduce the size of the dataset. 
 On se concentre sur les produits qui forment 95% des commandes, en tout environ 3000 produits. 
 
