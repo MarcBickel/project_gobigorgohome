@@ -57,6 +57,7 @@ They represent the health impact that these food have on the consumer.
 ## Dataset link
 
 Now we have these two datasets that each contain interesting information about food products, and we need a way to link them. Since the only common data between the two is the naming of the products, we came up with a method that uses that particular information.  
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/word-per-language-html.html" height="500px" width="100%"></iframe>
 We created a dictionnary of the most frequent words in each nutritionnal grade category (after some translation, to be able to use products regardless of origin/language). Some results are easily predictable, like "bio" being the most used word in grade A, and "chocolate" being its counterpart in grade E. More info in the notebook. 
 
 *formule mathématique pour lier les deux datasets et faire notre ranking* (redemander exactement à Lorenzo), si possible un joli truc en LaTeX
@@ -66,13 +67,15 @@ We then compute a similiraty score for each product, based on word occurences. T
 Is there a general tendency discernable amongst orders ? 
 
 *plot nombre d'items dans chaque nutri grade (plot avec des petites barres horizontales?)*
-
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/number_items_grade_off.html" height="500px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/number_items_grade_instacart.html" height="500px" width="100%"></iframe>
 
 ## Food rankings
 
 With that setup, we can now establish rankings. The 5 most bought products in each category can be found below. 
 
 *5 produits les plus achetés dans A, B, C, D, E*
+<img src="img/final_plot.png">
 
 ## Findings
 Do you buy these products as well ? Are you more inclined towards the ones in the A-grade or the E-grade ? 
