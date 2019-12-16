@@ -59,10 +59,9 @@ They represent the health impact that these food have on the consumer.
 ## Dataset link
 
 Now we have these two datasets that each contain interesting information about food products, and we need a way to link them. Since the only common data between the two is the naming of the products, we came up with a method that uses that particular information.  
-<p style="margin-left:-100px">
+<p style="margin-left:-200px">
 <iframe id="igraph" scrolling="no" style="position:relative; border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/word-per-language-html.html" height="500px" width="150%"></iframe>
 </p>
-
 <img src="img/wordcloud-translation.png">
 
 We created a dictionnary of the most frequent words in each nutritionnal grade category (after some translation, to be able to use products regardless of origin/language). Some results are easily predictable, like "bio" being the most used word in grade A, and "chocolate" being its counterpart in grade E. More info in the notebook. 
