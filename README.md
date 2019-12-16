@@ -76,3 +76,10 @@ We will add other statistics to our analysis in the Milestone 3.
 - Establish food ranking, base on nutritionnal score, and other additionnal criteria if needed
 
 # Questions for TAs
+
+# Members contributions
+
+Cécile : Notebook computations & comments, computations verification
+Lorenzo : Dataset cleaning, datasets linking, Notebook computations
+Samuel : Data story graphs, webpage setup & hosting, notebook revisions and corrections
+Marc : Data story, notebook compilation

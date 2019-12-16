@@ -46,34 +46,39 @@ On se concentre sur les produits qui forment 95% des commandes, en tout environ 
 
 ## Food grades
 
-Now we have already talked quite a lot about the nutritional grades Open Food Facts, but what are they exactly ?
+Now we have already talked quite a lot about the nutritional grades Open Food Facts, but what are they exactly ? They represent the health impact that the product has on the consumer. To be even more precise, they are defined in the Open Food Facts documentation as *nutrition score defined by the UK Food Standards Administration (FSA)*. We can see that this data is the product of serious work done by professionnals, and not only an impression written by consumers. 
+
+A visual representation of the different grades and their most frequent words can be found below. 
 
 <img src="img/wordcloud.png">
 
-They are defined as 
-nutrition-score-fr_100g : experimental nutrition score derived from the UK FSA score and adapted for the French market (formula defined by the team of Professor Hercberg)
-nutrition-score-uk_100g : nutrition score defined by the UK Food Standards Administration (FSA)
-
-They represent the health impact that these food have on the consumer. 
 
 ## Dataset link
 
 Now we have these two datasets that each contain interesting information about food products, and we need a way to link them. Since the only common data between the two is the naming of the products, we came up with a method that uses that particular information.  
-<p style="margin-left:-200px">
-<iframe id="igraph" scrolling="no" style="position:relative; border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/word-per-language-html.html" height="500px" width="150%"></iframe>
-</p>
+
+
+We created a dictionnary of the most frequent words in each nutritionnal grade category.  Some results are easily predictable, like "bio" being the most used word in grade A, and "chocolate" being its counterpart in grade E. More info in the notebook. 
+
+We then translate all these words to english, thanks to a Google Translate API. Of course some languages contained were found more frequently than others, as is illustrated below. 
+
 <img src="img/wordcloud-translation.png">
 
-We created a dictionnary of the most frequent words in each nutritionnal grade category (after some translation, to be able to use products regardless of origin/language). Some results are easily predictable, like "bio" being the most used word in grade A, and "chocolate" being its counterpart in grade E. More info in the notebook. 
+<p style="margin-left:-150px">
+<iframe id="igraph" scrolling="no" style="position:relative; border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/word-per-language-html.html" height="500px" width="150%"></iframe>
+</p>
+
+
+Now, we can use the formula below to cristallize the link. We compute a similiraty score for each product, based on word occurences. This allows us to assign a grade to instacart items. 
 
 *formule mathématique pour lier les deux datasets et faire notre ranking* (redemander exactement à Lorenzo), si possible un joli truc en LaTeX
 
-We then compute a similiraty score for each product, based on word occurences. This allows us to assign a grade to instacart items. 
-
-Is there a general tendency discernable amongst orders ? 
+Is there a general tendency discernable amongst orders ? Below is the plot of the items per grade found in each dataset. 
 
 *plot nombre d'items dans chaque nutri grade (plot avec des petites barres horizontales?)*
 <iframe id="igraph" scrolling="no" style="position:relative; border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/items_per_grade.html" height="550px" width="100%"></iframe>
+
+Nombre d'items uniques ou nombre total ?
 
 ## Food rankings
 
@@ -88,6 +93,9 @@ Do you buy these products as well ? Are you more inclined towards the ones in th
 Here are the 5 best products people buy (justifier pourquoi best) and the 5 worst (pourquoi worst).
 *les différents rankings*
 <iframe id="igraph" scrolling="no" style="position:relative; border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/top5grades.html" height="600px" width="100%"></iframe>
+
+
+You can find by yourself where you are situated in the complex landscape of food health. Can you regonize some of the staples of you diet ?
 
 ## Fun facts 
 -big lemons ?
