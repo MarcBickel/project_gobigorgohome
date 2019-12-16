@@ -37,8 +37,8 @@ We started with the Open food facts database , where we removed the rows that ha
 Standard outliers and NaN removal has also been applied. 
 We also remove columns that are mostly empty (  >850k rows have the corresponding value missing). We now have a size-reduced dataset, but the quantity of information itself did not get reduced very much. 
 
-<div text-align:center>
-<iframe id="igraph" scrolling="no" style="position:relative; border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/850k-filter.html" height="800px" width="200%"></iframe>
+<div align='center'>
+<iframe align='center' id="igraph" scrolling="no" style="position:relative; border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/850k-filter.html" height="800px" width="200%"></iframe>
 </div>
 Concerning the instacart dataset, we created a product-centric dataframe, where each product is represented by a row. This view serves us much better than the previous one. We then only consider the 5% most popular products, to be able to reduce the size of the dataset. 
 On se concentre sur les produits qui forment 95% des commandes, en tout environ 3000 produits. 
@@ -59,6 +59,8 @@ They represent the health impact that these food have on the consumer.
 
 Now we have these two datasets that each contain interesting information about food products, and we need a way to link them. Since the only common data between the two is the naming of the products, we came up with a method that uses that particular information.  
 <iframe id="igraph" scrolling="no" style="position:relative; border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/word-per-language-html.html" height="500px" width="150%"></iframe>
+<img src="img/wordcloud-translation.png">
+
 We created a dictionnary of the most frequent words in each nutritionnal grade category (after some translation, to be able to use products regardless of origin/language). Some results are easily predictable, like "bio" being the most used word in grade A, and "chocolate" being its counterpart in grade E. More info in the notebook. 
 
 *formule mathématique pour lier les deux datasets et faire notre ranking* (redemander exactement à Lorenzo), si possible un joli truc en LaTeX
@@ -76,13 +78,14 @@ Is there a general tendency discernable amongst orders ?
 With that setup, we can now establish rankings. The 5 most bought products in each category can be found below. 
 
 *5 produits les plus achetés dans A, B, C, D, E*
-<img src="img/final_plot.png">
+<img src="img/top5bought.png">
 
 ## Findings
 Do you buy these products as well ? Are you more inclined towards the ones in the A-grade or the E-grade ? 
 
 Here are the 5 best products people buy (justifier pourquoi best) and the 5 worst (pourquoi worst).
 *les différents rankings*
+<iframe id="igraph" scrolling="no" style="position:relative; border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/top5grades.html" height="600px" width="100%"></iframe>
 
 ## Fun facts 
 -big lemons ?
