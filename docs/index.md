@@ -62,6 +62,7 @@ Now we have these two datasets that each contain interesting information about f
 <p style="margin-left:-50px">
 <iframe id="igraph" scrolling="no" style="position:relative; border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/word-per-language-html.html" height="500px" width="150%"></iframe>
 </p>
+
 <img style=src="img/wordcloud-translation.png">
 
 We created a dictionnary of the most frequent words in each nutritionnal grade category (after some translation, to be able to use products regardless of origin/language). Some results are easily predictable, like "bio" being the most used word in grade A, and "chocolate" being its counterpart in grade E. More info in the notebook. 
