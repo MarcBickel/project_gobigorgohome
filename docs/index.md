@@ -72,6 +72,7 @@ We then translate all these words to english, thanks to a Google Translate API. 
 Now, we can use the formula below to cristallize the link. We compute a similiraty score for each product, based on word occurences. This allows us to assign a grade to instacart items. 
 
 *formule mathématique pour lier les deux datasets et faire notre ranking* (redemander exactement à Lorenzo), si possible un joli truc en LaTeX
+<img src="img/equation.png">
 
 Is there a general tendency discernable amongst orders ? Below is the plot of the items per grade found in each dataset. 
 
