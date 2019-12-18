@@ -107,7 +107,8 @@ In order to make better sense of the previous results, it is important to ask ou
 Finally, the data instacart gathers can code from sources where it is recorded automatically from online orders from people. Online ordering may indicate low-income users, who may not have enough money to be able to care about the food products health. 
 
 ### boxplots
-<iframe id="igraph" scrolling="no" style="position:relative; border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/html_boxplot_carbohydrates_100g.html" height="525px" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="position:relative; border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/number-orders-no-product-of-grade.html" height="525px" width="100%"></iframe>
 
 
+<img src="img/proportion of grades per order.png">
 
