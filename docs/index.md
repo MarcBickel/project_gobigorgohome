@@ -84,7 +84,6 @@ Now, every item is projected in the dimension of every grade. We multiply that p
 
 With that setup, we can now establish rankings. The 5 most bought products in each category can be found below. 
 
-*5 produits les plus achetés dans A, B, C, D, E*
 <img src="img/top5bought.png">
 
 # Findings
