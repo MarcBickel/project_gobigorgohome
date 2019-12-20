@@ -2,6 +2,9 @@
 
 # Title : Where do your purchases rank in our analysis ?
 
+# Data story
+https://marcbickel.github.io/project_gobigorgohome
+
 # Abstract
 
 Nowadays, there exists a myriad of products, examples of an ever-growing consumption regime. Furthermore, the convenience of accessing such items is only a few clicks away for most of us. In this project, we will ground our reasoning on the consumer's point of view in todays world. Our starting point will be the Open food facts dataset, from which we will extract data on several different food products. Do the values that people hold dear stand up to the comparison with the food they actually buy ? Is the most sought after type of food really the one that should top such a ranking ? Are those products the ones that impact the most consumer health and are they the most environmentally-friendly ? We will try to answer these questions by coming up with a ranking containing top products regarding : consumer diet, travel from production site, carbon footprint, nutritional index, etc. These rankings will then be compared to the products bought online by consumers with the Instacart dataset, most noticeably with the popularity of particular items. We will then be able to create personalized recommendations for the consumers. They will highlight good shopping practices and the best-in-category products. 
@@ -80,6 +83,6 @@ We will add other statistics to our analysis in the Milestone 3.
 # Members contributions
 
 Cécile : Notebook computations & comments, computations verification
-Lorenzo : Dataset cleaning, datasets linking, Notebook computations
+Lorenzo : Dataset cleaning, datasets linking, Notebook computations, Poster preparation, presentation
 Samuel : Data story graphs, webpage setup & hosting, notebook revisions and corrections
-Marc : Data story, notebook compilation
+Marc : Data story, notebook compilation and combination, Poster preparation, presentation
