@@ -1,6 +1,6 @@
 # AdA Project: Team go Big or go Home
 
-# Title : Where do your purchases rank in our analysis ?
+# Title : Do you eat healthy ?
 
 # Data story
 https://marcbickel.github.io/project_gobigorgohome
