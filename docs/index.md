@@ -61,16 +61,20 @@ To create an accurate word representation, quite some time was spent translating
 
 The formula below to crystallised the link between the datasets. We computed a similarity score for each product, based on word occurrences. This allowed us to assign a grade to instacart items. 
 
+## Instacart nutri-scores
+
+After computing how much every instacart item belongs to each nutrition grade, we looked to which grade it belonged the most (i.e. in which grade does it have the maximum nutrition score). 
+
 <img src="img/equation.png">
 
 Is there a general tendency discernable amongst orders ? Below is the plot of the items per grade found in each dataset. 
 
-*plot nombre d'items dans chaque nutri grade (plot avec des petites barres horizontales?)*
 <iframe id="igraph" scrolling="no" style="position:relative; border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/items_per_grade.html" height="550px" width="100%"></iframe>
 
-## Weighted score
 
-We will also introduce the _Weighted score_, that allows us to have a common scale to compare all the products' healthiness. We assign the following values: 
+### Weighted score
+
+We also introduced the _Weighted score_, that allows us to have a common scale to compare all the products' healthiness. We assign the following values: 
 
 - -2 to E  
 - -1 to D  
@@ -80,21 +84,9 @@ We will also introduce the _Weighted score_, that allows us to have a common sca
 
 Now, every item is projected in the dimension of every grade. We multiply that projection by the values above, and that give us the score of said item. More info in the notebook ! 
 
-# Food rankings
-
-With that setup, we can now establish rankings. The 5 most bought products in each category can be found below. 
-
-<img src="img/top5bought.png">
-
 # Findings
-Do you buy these products as well ? Are you more inclined towards the ones in the A-grade or the E-grade ? 
 
-Here are the 5 products that correspond the most to each nutritional grade. The scale is the percentage to which the product is attributed to that specific category. 
-<iframe id="igraph" scrolling="no" style="position:relative; border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/top5grades.html" height="800px" width="100%"></iframe>
-
-Some comments in the results: condoms make a lot of sense to be very unhealthy to eat, while cauliflowers are indeed very healthy ! We were first puzzled when we saw that bowties were in the B category. How could that be healthy ? We then dug in the data, went through a lot of searching, and finally found that this product refers to the pasta that has the shape of bowties, not the object where they got their name from. 
-
-Now we can ask ourselves where we are in the complex landscape of food health. Can you recognise some of the staples of you diet ?
+## Content of the orders
 
 We can also find the grade relative to whole orders. Below are the grades totally absent from a given order. 
 
@@ -103,6 +95,21 @@ What do we notice ? Since altogether there are 3'083'012 distinct orders, almost
 
 <img src="img/proportion of grades per order.png">
 Several facts are shown by these histograms. Firstly, let us look at the bins showing the orders that contain 100 percent of products of a given grade. Excepts for grade A, it is very rare to have a basket containing only products of a given grade. Some more details are worth mentioning, especially about grade A. The distribution symmetrically decreases around 50 % where it attains its maximum. This shows that most orders contain 50 percent of A products. About the other grades, we can see that they attain their mode around 20%-25%, showing a well-rounded order. Refer to the notebook for more mathematical details.
+
+## Food rankings
+
+With that setup, we can now establish rankings. The 5 most bought products in each category can be found below. 
+
+<img src="img/top5bought.png">
+
+Do you buy these products as well ? Are you more inclined towards the ones in the A-grade or the E-grade ? 
+
+Here are the 5 products that correspond the most to each nutritional grade. The scale is the percentage to which the product is attributed to that specific category. 
+<iframe id="igraph" scrolling="no" style="position:relative; border:none;" seamless="seamless" src="https://marcbickel.github.io/project_gobigorgohome/html/top5grades.html" height="800px" width="100%"></iframe>
+
+Some comments in the results: condoms make a lot of sense to be very unhealthy to eat, while cauliflowers are indeed very healthy ! We were first puzzled when we saw that bowties were in the B category. How could that be healthy ? We then dug in the data, went through a lot of searching, and finally found that this product refers to the pasta that has the shape of bowties, not the object where they got their name from. 
+
+Now we can ask ourselves where we are in the complex landscape of food health. Can you recognise some of the staples of you diet ?
 
 # Fun facts 
 Amongst the different nutritional grades, some words that appear the most often are not food related words. However, one can easily imagine why these words come up as related to a specific grade. For example, in the wordcloud representation of the openfoodfacts database (that can be found in the notebook) of grade A, "without" is quite big, while "extra" appears as an important word in grade D. Furthermore, in this same representation of the instacart products "large lemon" is quite surprisingly one of the largest words. This misclassification of a healthy product, is probably due to the fact that the adjective "large" is often associated with unhealthy products.  
