@@ -46,7 +46,7 @@ The instacart dataset was initially split into several sub-datasets. We linked t
 
 # Linking the two datasets
 
-Ne now have two datasets that each contain interesting information about food products, and we need a way to link them. In order to come up with such a way, we had to think about which information is contained in both. Since the words constituting the names of the products in Open Food Facts and Instacart seemed to be the only such common feature, our goal became to create a word representation of the Open Food Facts grades.  
+We now have two datasets that each contain interesting information about food products, and we need a way to link them. In order to come up with such a way, we had to think about which information is contained in both. Since the words constituting the names of the products in Open Food Facts and Instacart seemed to be the only such common feature, our goal became to create a word representation of the Open Food Facts grades.  
 We briefly present the methodology we followed on the Open Food Facts dataset to come up with such a representation. After doing some sanitisation of the names, such as stop word and number removal, case folding and translation for example, we counted the number of occurrences of each word in the names of the products. The wordclouds below provide a visual representation of the different grades and their most frequent words.
 
 <img src="img/wordcloud.png">
